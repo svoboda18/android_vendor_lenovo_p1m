@@ -1,3 +1,5 @@
+# Copy to /vendor/
+
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/vendor/bin,$(TARGET_COPY_OUT_VENDOR)/bin)
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/vendor/lib,$(TARGET_COPY_OUT_VENDOR)/lib)
@@ -8,7 +10,7 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/vendor/e
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/vendor/firmware,$(TARGET_COPY_OUT_VENDOR)/firmware)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/vendor/thh,$(TARGET_COPY_OUT_VENDOR)/thh)
+# Copy to /system/
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/etc,system/etc)
 
