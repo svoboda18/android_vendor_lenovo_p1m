@@ -1,5 +1,0 @@
-service wmtLoader /system/bin/wmt_loader
-    user root
-    group root
-    class core
-    oneshot
