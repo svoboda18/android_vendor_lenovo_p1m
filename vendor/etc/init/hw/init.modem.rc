@@ -9,12 +9,20 @@ on post-fs-data
     write /proc/bootprof "post-fs-data: on modem start"
 
     chown radio radio /sys/kernel/ccci/boot
+    mkdir /data/ccci_cfg 0770 system radio
+    mkdir /data/mdlog 0775 shell system
+
+    chown radio radio /sys/kernel/ccci/boot
     chown radio radio /dev/ccci_fs
     chown radio radio /dev/ccci_ioctl0
     chown radio radio /dev/ccci_ioctl1
     chown radio radio /dev/ccci_ipc_1220_0
     chown radio radio /dev/ccci_monitor
     chown media audio /dev/ccci_aud
+    
+    # ignore permission check
+    write /data/ccci_cfg/md_new_ver.1 "flag"
+    chmod 0660 /data/ccci_cfg/md_new_ver.1
 
     # Selinux
     mkdir /data/ccci_cfg 0770 system radio

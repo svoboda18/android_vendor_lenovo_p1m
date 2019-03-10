@@ -9,12 +9,17 @@ service wifi2agps /vendor/bin/wifi2agps
     user wifi
     group gps inet
 
-service autokd /vendor/bin/autokd
-    class core
-    user system
-    group system
+on property:wlan.driver.status=ok
+    write /dev/wmtWifi "1"
 
-service conn_launcher /vendor/bin/6620_launcher -p /vendor/etc/firmware/
+on property:wlan.driver.status=unloaded
+    write /dev/wmtWifi "0"
+    
+service netdiag /vendor/bin/netdiag
+    class main
+    socket netdiag stream 0664 root inet
+
+service conn_launcher /vendor/bin/6620_launcher -p /vendor/firmware/
     user system
     group system
     class core

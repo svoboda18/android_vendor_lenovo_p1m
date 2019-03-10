@@ -14,6 +14,8 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/vendor/f
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/etc,system/etc)
 
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/lib,system/lib)
+
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/lenovo/p1m/usr,system/usr)
 
 
